@@ -1,11 +1,15 @@
-CRON docker image available as openmrs/cron-docker
+# A docker image to perform cron backups of data in Docker containers
+
+This is based off of [OpenMRS Docker Cron Backup Image](https://github.com/openmrs/openmrs-contrib-docker-cron-backup).
+
+It retains the history, but the fork relationship is removed. The decision to push our own image is so that we have control over the image.
 
 It tars directories DIR1, DIR2, etc. defined in the DIRS environment variable in the format DIR1:NAME1,DIR2:NAME2,... under /backup/NAME1-Y-m-d_H-M-S.tar.gz by defined SCHEDULE.
 
 Example of use with docker-compose:
 ```
   backup:
-    image: openmrs/cron-backup:latest
+    image: registry.gitlab.com/librehealth/lsc/lh-docker-cron-backup:latest
     depends_on:
       - api
     volumes:
@@ -34,7 +38,7 @@ docker-compose run --rm backup bash restore.sh 2017-09-27_00-00-01
 It's also possible to call scripts:
 ```
   backup:
-    image: openmrs/cron-backup:latest
+    image: registry.gitlab.com/librehealth/lsc/lh-docker-cron-backup:latest
     volumes:
       - scripts:/scripts
     environment:
