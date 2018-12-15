@@ -11,7 +11,7 @@ fi
 
 if [ ! -z "$DIRS" ]
 then
-  crontab -l | { cat; echo "$SCHEDULE bash $PWD/backup.sh"; } | crontab -
+  crontab -l | { cat; echo "$SCHEDULE bash $PWD/backup.sh backup"; } | crontab -
 else
   echo "DIRS environment not defined!"
 fi
