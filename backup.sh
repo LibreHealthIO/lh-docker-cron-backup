@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
 
-if [ ! -z "$DIRS" ] 
+if [ ! -z "$DIRS" ]
 then
   DATE=`date +%Y-%m-%d_%H-%M-%S`
-  for DIR in ${DIRS//,/ } 
+  for DIR in ${DIRS//,/ }
     do
       DIR_PAIR=(${DIR//:/ })
       tar -czvf /backup/${DIR_PAIR[1]}-$DATE.tar.gz ${DIR_PAIR[0]}
