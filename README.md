@@ -1,5 +1,7 @@
 # A docker image to perform cron backups of data in Docker containers
 
+[![pipeline status](https://gitlab.com/librehealth/lsc/lh-docker-cron-backup/badges/master/pipeline.svg)](https://gitlab.com/librehealth/lsc/lh-docker-cron-backup/commits/master)
+
 This is based off of [OpenMRS Docker Cron Backup Image](https://github.com/openmrs/openmrs-contrib-docker-cron-backup).
 
 It retains the history, but the fork relationship is removed. The decision to push our own image is so that we have control over the image.
